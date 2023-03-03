@@ -1,0 +1,221 @@
+<div>
+  <div>
+    <h1>
+      Listing #<%= @the_listing.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/listings">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_listing/<%= @the_listing.id %>">
+          Delete listing
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Street address
+      </dt>
+      <dd>
+        <%= @the_listing.street_address %>
+      </dd>
+
+      <dt>
+        Unit number
+      </dt>
+      <dd>
+        <%= @the_listing.unit_number %>
+      </dd>
+
+      <dt>
+        City
+      </dt>
+      <dd>
+        <%= @the_listing.city %>
+      </dd>
+
+      <dt>
+        Zip code
+      </dt>
+      <dd>
+        <%= @the_listing.zip_code %>
+      </dd>
+
+      <dt>
+        Info
+      </dt>
+      <dd>
+        <%= @the_listing.info %>
+      </dd>
+
+      <dt>
+        Bathrooms
+      </dt>
+      <dd>
+        <%= @the_listing.bathrooms %>
+      </dd>
+
+      <dt>
+        Bedrooms
+      </dt>
+      <dd>
+        <%= @the_listing.bedrooms %>
+      </dd>
+
+      <dt>
+        Current rent
+      </dt>
+      <dd>
+        <%= @the_listing.current_rent %>
+      </dd>
+
+      <dt>
+        Sublet rent
+      </dt>
+      <dd>
+        <%= @the_listing.sublet_rent %>
+      </dd>
+
+      <dt>
+        Poster
+      </dt>
+      <dd>
+        <%= @the_listing.poster %>
+      </dd>
+
+      <dt>
+        Image
+      </dt>
+      <dd>
+        <%= @the_listing.image %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_listing.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_listing.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit listing
+    </h2>
+
+    <form action="/modify_listing/<%= @the_listing.id %>"  method="post" >
+      <div>
+        <label for="street_address_box">
+          Street address
+        </label>
+
+        <input type="text" id="street_address_box" name="query_street_address" value="<%= @the_listing.street_address %>">
+      </div>
+
+      <div>
+        <label for="unit_number_box">
+          Unit number
+        </label>
+
+        <input type="text" id="unit_number_box" name="query_unit_number" value="<%= @the_listing.unit_number %>">
+      </div>
+
+      <div>
+        <label for="city_box">
+          City
+        </label>
+
+        <input type="text" id="city_box" name="query_city" value="<%= @the_listing.city %>">
+      </div>
+
+      <div>
+        <label for="zip_code_box">
+          Zip code
+        </label>
+
+        <input type="text" id="zip_code_box" name="query_zip_code" value="<%= @the_listing.zip_code %>">
+      </div>
+
+      <div>
+        <label for="info_box">
+          Info
+        </label>
+
+        <textarea id="info_box" name="query_info"><%= @the_listing.info %></textarea>
+      </div>
+
+      <div>
+        <label for="bathrooms_box">
+          Bathrooms
+        </label>
+
+        <input type="text" id="bathrooms_box" name="query_bathrooms" value="<%= @the_listing.bathrooms %>">
+      </div>
+
+      <div>
+        <label for="bedrooms_box">
+          Bedrooms
+        </label>
+
+        <input type="text" id="bedrooms_box" name="query_bedrooms" value="<%= @the_listing.bedrooms %>">
+      </div>
+
+      <div>
+        <label for="current_rent_box">
+          Current rent
+        </label>
+
+        <input type="text" id="current_rent_box" name="query_current_rent" value="<%= @the_listing.current_rent %>">
+      </div>
+
+      <div>
+        <label for="sublet_rent_box">
+          Sublet rent
+        </label>
+
+        <input type="text" id="sublet_rent_box" name="query_sublet_rent" value="<%= @the_listing.sublet_rent %>">
+      </div>
+
+      <div>
+        <label for="poster_box">
+          Poster
+        </label>
+
+        <input type="text" id="poster_box" name="query_poster" value="<%= @the_listing.poster %>">
+      </div>
+
+      <div>
+        <label for="image_box">
+          Image
+        </label>
+
+        <input type="text" id="image_box" name="query_image" value="<%= @the_listing.image %>">
+      </div>
+
+      <button>
+        Update listing
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

@@ -1,0 +1,246 @@
+<div>
+  <div>
+    <h1>
+      List of all listings
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new listing
+    </h2>
+
+    <form action="/insert_listing" method="post">
+      <div>
+        <label for="street_address_box">
+          Street address
+        </label>
+
+        <input type="text" id="street_address_box" name="query_street_address">
+      </div>
+
+      <div>
+        <label for="unit_number_box">
+          Unit number
+        </label>
+
+        <input type="text" id="unit_number_box" name="query_unit_number">
+      </div>
+
+      <div>
+        <label for="city_box">
+          City
+        </label>
+
+        <input type="text" id="city_box" name="query_city">
+      </div>
+
+      <div>
+        <label for="zip_code_box">
+          Zip code
+        </label>
+
+        <input type="text" id="zip_code_box" name="query_zip_code">
+      </div>
+
+      <div>
+        <label for="info_box">
+          Info
+        </label>
+
+        <textarea id="info_box" name="query_info" rows="3"></textarea>
+      </div>
+
+      <div>
+        <label for="bathrooms_box">
+          Bathrooms
+        </label>
+
+        <input type="text" id="bathrooms_box" name="query_bathrooms">
+      </div>
+
+      <div>
+        <label for="bedrooms_box">
+          Bedrooms
+        </label>
+
+        <input type="text" id="bedrooms_box" name="query_bedrooms">
+      </div>
+
+      <div>
+        <label for="current_rent_box">
+          Current rent
+        </label>
+
+        <input type="text" id="current_rent_box" name="query_current_rent">
+      </div>
+
+      <div>
+        <label for="sublet_rent_box">
+          Sublet rent
+        </label>
+
+        <input type="text" id="sublet_rent_box" name="query_sublet_rent">
+      </div>
+
+      <div>
+        <label for="poster_box">
+          Poster
+        </label>
+
+        <input type="text" id="poster_box" name="query_poster">
+      </div>
+
+      <div>
+        <label for="image_box">
+          Image
+        </label>
+
+        <input type="text" id="image_box" name="query_image">
+      </div>
+
+      <button>
+        Create listing
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Street address
+        </th>
+
+        <th>
+          Unit number
+        </th>
+
+        <th>
+          City
+        </th>
+
+        <th>
+          Zip code
+        </th>
+
+        <th>
+          Info
+        </th>
+
+        <th>
+          Bathrooms
+        </th>
+
+        <th>
+          Bedrooms
+        </th>
+
+        <th>
+          Current rent
+        </th>
+
+        <th>
+          Sublet rent
+        </th>
+
+        <th>
+          Poster
+        </th>
+
+        <th>
+          Image
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_listings.each do |a_listing| %>
+      <tr>
+        <td>
+          <%= a_listing.id %>
+        </td>
+
+        <td>
+          <%= a_listing.street_address %>
+        </td>
+
+        <td>
+          <%= a_listing.unit_number %>
+        </td>
+
+        <td>
+          <%= a_listing.city %>
+        </td>
+
+        <td>
+          <%= a_listing.zip_code %>
+        </td>
+
+        <td>
+          <%= a_listing.info %>
+        </td>
+
+        <td>
+          <%= a_listing.bathrooms %>
+        </td>
+
+        <td>
+          <%= a_listing.bedrooms %>
+        </td>
+
+        <td>
+          <%= a_listing.current_rent %>
+        </td>
+
+        <td>
+          <%= a_listing.sublet_rent %>
+        </td>
+
+        <td>
+          <%= a_listing.poster %>
+        </td>
+
+        <td>
+          <%= a_listing.image %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_listing.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_listing.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/listings/<%= a_listing.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
