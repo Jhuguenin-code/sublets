@@ -88,11 +88,7 @@
       </div>
 
       <div>
-        <label for="poster_box">
-          Poster
-        </label>
-
-        <input type="text" id="poster_box" name="query_poster">
+        <input type="hidden" id="poster_box" name="query_poster" value="<%= @current_user.id %>">
       </div>
 
       <div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Base Rails</title>
+    <title>My application</title>
     <%= csrf_meta_tags %>
 
     <!-- Expand the number of characters we can use in the document beyond basic ASCII 🎉 -->
@@ -16,6 +16,21 @@
   </head>
 
   <body>
+    <li>
+    <a href="/user_sign_in">Sign in</a>
+    </li>
+     <li>
+    <a href="/interests">All interests</a>
+    </li>
+     <li>
+    <a href="/user_sign_out">Sign out</a>
+    </li>
+     <li>
+    <a href="/user_sign_up">Sign up</a>
+    </li>
+     <li>
+    <a href="/listings">All listings</a>
+    </li>
     <%= yield %>
   </body>
 </html>
