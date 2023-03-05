@@ -15,22 +15,35 @@
 
   </head>
 
-  <body>
-    <li>
-    <a href="/user_sign_in">Sign in</a>
-    </li>
-     <li>
-    <a href="/interests">All interests</a>
-    </li>
-     <li>
-    <a href="/user_sign_out">Sign out</a>
-    </li>
-     <li>
-    <a href="/user_sign_up">Sign up</a>
-    </li>
-     <li>
-    <a href="/listings">All listings</a>
-    </li>
-    <%= yield %>
+ <body>
+    <ul>
+      <% if @current_user == nil %>
+      <li>
+        <a href="/user_sign_in">Sign in</a>
+      </li>
+      <li>
+        <a href="/user_sign_up">Sign up</a>
+      </li>
+      <% else %>
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/listings">All Listings</a>
+      </li>
+      <li>
+        <a href="/interests">Your favorited listings</a>
+      </li>
+      <li>
+        <a href="/user_sign_out">Sign out</a>
+      </li>
+       <% end %>
+    </ul>
+    <p style="color: green"> <%= notice %> </p>
+
+    <p style="color: red"> <%= alert %> </p>
+
+      <%= yield %>
   </body>
+
 </html>

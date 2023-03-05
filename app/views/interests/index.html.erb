@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      List of all interests
+      <%= @current_user.first_name %>'s Favorited Listings
     </h1>
   </div>
 </div>
@@ -11,7 +11,7 @@
 <div>
   <div>
     <h2>
-      Add a new interest
+      Favorite a new listing
     </h2>
 
     <form action="/insert_interest" method="post">
