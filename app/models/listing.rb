@@ -23,4 +23,12 @@ class Listing < ApplicationRecord
     :foreign_key => "poster",
     :required => true
   })
+
+  has_many(:favorites, {
+    :class_name => "Interest",
+    :foreign_key => "listing_id",
+    :dependent => :destroy
+  })
+
+  
 end

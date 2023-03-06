@@ -22,6 +22,12 @@ class User < ApplicationRecord
     :dependent => :destroy
   })
   
+  has_many(:favorites, {
+    :class_name => "Interest",
+    :foreign_key => "user_id",
+    :dependent => :destroy
+  })
+  
 
   def full_name
     return first_name + " " + last_name
