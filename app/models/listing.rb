@@ -18,6 +18,14 @@
 #  updated_at     :datetime         not null
 #
 class Listing < ApplicationRecord
+  validates(:street_address, { :presence => true })
+  validates(:unit_number, { :presence => true })
+  validates(:city, { :presence => true })
+  validates(:zip_code, { :presence => true })
+  validates(:bedrooms, { :presence => true })
+  validates(:bathrooms, { :presence => true })
+  validates(:current_rent, { :presence => true })
+
   belongs_to(:a_poster, {
     :class_name => "User",
     :foreign_key => "poster",

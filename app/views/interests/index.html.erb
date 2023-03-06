@@ -40,15 +40,11 @@
     <table border="1">
       <tr>
         <th>
-          ID
+          Address
         </th>
 
         <th>
-          Listing
-        </th>
-
-        <th>
-          User
+          Favoriter
         </th>
 
         <th>
@@ -66,15 +62,11 @@
       <% @list_of_interests.each do |an_interest| %>
       <tr>
         <td>
-          <%= an_interest.id %>
+          <%= an_interest.listing.street_address %>
         </td>
 
         <td>
-          <%= an_interest.listing_id %>
-        </td>
-
-        <td>
-          <%= an_interest.user_id %>
+          <%= an_interest.favoriter.full_name %>
         </td>
 
         <td>

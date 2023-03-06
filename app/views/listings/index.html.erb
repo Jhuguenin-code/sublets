@@ -111,10 +111,7 @@
   <div>
     <table border="1">
       <tr>
-        <th>
-          ID
-        </th>
-
+       
         <th>
           Street address
         </th>
@@ -169,10 +166,7 @@
 
       <% @list_of_listings.each do |a_listing| %>
       <tr>
-        <td>
-          <%= a_listing.id %>
-        </td>
-
+       
         <td>
           <%= a_listing.street_address %>
         </td>
@@ -205,8 +199,8 @@
           <%= a_listing.current_rent-200%>
         </td>
 
-        <td>
-          <%= a_listing.poster %>
+        <td> 
+          <%= a_listing.a_poster.full_name %>
         </td>
 
         <td>

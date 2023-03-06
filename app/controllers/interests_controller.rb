@@ -1,6 +1,6 @@
 class InterestsController < ApplicationController
   def index
-    matching_interests = Interest.all
+    matching_interests = @current_user.favorites
 
     @list_of_interests = matching_interests.order({ :created_at => :desc })
 
