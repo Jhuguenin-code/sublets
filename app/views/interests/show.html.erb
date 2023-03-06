@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      Interest #<%= @the_interest.id %> details
+      Favorited Listing #<%= @the_interest.id %> details
     </h1>
 
     <div>
@@ -13,7 +13,7 @@
 
       <div>
         <a href="/delete_interest/<%= @the_interest.id %>">
-          Delete interest
+          Un-favorite this listing
         </a>
       </div>
     </div>
@@ -24,13 +24,6 @@
       </dt>
       <dd>
         <%= @the_interest.listing_id %>
-      </dd>
-
-      <dt>
-        User
-      </dt>
-      <dd>
-        <%= @the_interest.user_id %>
       </dd>
 
       <dt>
@@ -52,35 +45,7 @@
 
 <hr>
 
-
-<div>
-  <div>
-    <h2>
-      Edit interest
-    </h2>
-
-    <form action="/modify_interest/<%= @the_interest.id %>"  method="post" >
-      <div>
-        <label for="listing_id_box">
-          Listing
-        </label>
-
-        <input type="text" id="listing_id_box" name="query_listing_id" value="<%= @the_interest.listing_id %>">
-      </div>
-
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_interest.user_id %>">
-      </div>
-
-      <button>
-        Update interest
-      </button>
-    </form>
-  </div>
-</div>
+<a href="/listings/">Find a new listing to favorite!</a>
+  
 
 <hr>

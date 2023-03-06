@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      <%= @current_user.first_name %>'s Favorited Listings
+      <%= @current_user.full_name %>'s Favorited Listings
     </h1>
   </div>
 </div>
@@ -24,15 +24,11 @@
       </div>
 
       <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id">
+        <input type="hidden" id="user_id_box" name="query_user_id" value="<%= @current_user.id %>">
       </div>
 
       <button>
-        Create interest
+        Favorite this listing!
       </button>
     </form>
   </div>

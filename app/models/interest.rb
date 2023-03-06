@@ -9,4 +9,5 @@
 #  user_id    :integer
 #
 class Interest < ApplicationRecord
+  
 end

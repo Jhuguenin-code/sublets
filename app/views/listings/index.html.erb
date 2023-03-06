@@ -81,7 +81,7 @@
 
       <div>
         <label for="sublet_rent_box">
-          Sublet rent
+          Desired Sublet rent
         </label>
 
         <input type="text" id="sublet_rent_box" name="query_sublet_rent">
@@ -144,10 +144,6 @@
         </th>
 
         <th>
-          Current rent
-        </th>
-
-        <th>
           Sublet rent
         </th>
 
@@ -206,11 +202,7 @@
         </td>
 
         <td>
-          <%= a_listing.current_rent %>
-        </td>
-
-        <td>
-          <%= a_listing.sublet_rent %>
+          <%= a_listing.current_rent-200%>
         </td>
 
         <td>
