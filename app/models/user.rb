@@ -16,6 +16,13 @@ class User < ApplicationRecord
   validates :email, :presence => true
   has_secure_password
 
+  has_many(:individual_listings, {
+    :class_name => "Listing",
+    :foreign_key => "poster",
+    :dependent => :destroy
+  })
+  
+
   def full_name
     return first_name + " " + last_name
   end

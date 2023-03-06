@@ -18,4 +18,9 @@
 #  updated_at     :datetime         not null
 #
 class Listing < ApplicationRecord
+  belongs_to(:a_poster, {
+    :class_name => "User",
+    :foreign_key => "poster",
+    :required => true
+  })
 end
