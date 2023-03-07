@@ -13,23 +13,27 @@
     <h2>
       Favorite a new listing
     </h2>
-
+  </div>
+  <div>
     <form action="/insert_interest" method="post">
       <div>
-        <label for="listing_id_box">
+        <label for="Listing">
           Listing
         </label>
 
-        <input type="text" id="listing_id_box" name="query_listing_id">
+        <select name="query_listing_id">
+          <% Listing.all.order(:street_address).each do |a_listing|%>
+            <option value="<%= a_listing.id %>">
+              <%= a_listing.street_address %>
+            </option>
+          <% end %>
+        </select>
       </div>
-
       <div>
-        <input type="hidden" id="user_id_box" name="query_user_id" value="<%= @current_user.id %>">
+        <button>
+          Favorite this listing!
+        </button>
       </div>
-
-      <button>
-        Favorite this listing!
-      </button>
     </form>
   </div>
 </div>
@@ -44,7 +48,7 @@
         </th>
 
         <th>
-          Favoriter
+          Listing Poster
         </th>
 
         <th>
@@ -66,7 +70,7 @@
         </td>
 
         <td>
-          <%= an_interest.favoriter.full_name %>
+          <%= an_interest.listing.a_poster.full_name %>
         </td>
 
         <td>
