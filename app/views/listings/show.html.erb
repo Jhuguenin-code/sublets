@@ -1,7 +1,11 @@
 <div>
   <div>
+  <hr>
     <h1>
-      Listing #<%= @the_listing.id %> details
+      <%= @the_listing.street_address %> details
+      <div>
+        Unit #<%= @the_listing.unit_number %>
+      </div>
     </h1>
 
     <div>
@@ -209,6 +213,27 @@
     </form>
   </div>
   <% else %>
+    <h2>
+      Bid on this listing
+    </h2>
+    <h3>
+      Current bid: 
+    </h3>
+
+      <form action="/bid_on_listing/<%= @the_listing.id %>"  method="post" >
+        <div>
+          <label for="bid_box">
+            Your bid
+          </label>
+
+          <input type="text" id="bid_box" name="query_bid">
+        </div>
+
+        <button>
+          Place bid!
+        </button>
+      </form>
+    </div>
   <% end %>
 </div>
 

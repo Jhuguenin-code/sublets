@@ -196,7 +196,7 @@
         </td>
 
         <td>
-          <%= a_listing.current_rent-200%>
+          <%= number_to_currency(a_listing.current_rent-200)%>
         </td>
 
         <td> 
@@ -204,7 +204,7 @@
         </td>
 
         <td>
-          <%= a_listing.image %>
+          <img src="<%= a_listing.image %>">
         </td>
 
         <td>

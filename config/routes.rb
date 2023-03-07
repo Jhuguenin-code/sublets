@@ -67,4 +67,11 @@ Rails.application.routes.draw do
              
   #------------------------------
 
+  # ------------------------------
+
+  # BID FORM
+  get("/user_bid", { :controller => "listings", :action => "bid" })
+  
+  #------------------------------
+
 end
