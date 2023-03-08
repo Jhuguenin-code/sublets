@@ -79,7 +79,7 @@
         Poster
       </dt>
       <dd>
-        <%= @the_listing.poster %>
+        <%= @the_listing.a_poster.full_name %>
       </dd>
 
       <dt>
@@ -192,11 +192,8 @@
       </div>
 
       <div>
-        <label for="poster_box">
-          Poster
-        </label>
-
-        <input type="text" id="poster_box" name="query_poster" value="<%= @the_listing.poster %>">
+  
+        <input type="hidden" id="poster_box" name="query_poster" value="<%= @the_listing.poster %>">
       </div>
 
       <div>
@@ -216,11 +213,8 @@
     <h2>
       Bid on this listing
     </h2>
-    <h3>
-      Current bid: 
-    </h3>
-
-      <form action="/bid_on_listing/<%= @the_listing.id %>"  method="post" >
+    
+      <form action="/listing_bid/<%= @the_listing.id %>"  method="post" >
         <div>
           <label for="bid_box">
             Your bid
@@ -233,7 +227,14 @@
           Place bid!
         </button>
       </form>
-    </div>
+  
+  <h3>
+      Current bid:
+      <%= @the_bid %>
+      
+
+  </h3>
+  
   <% end %>
 </div>
 

@@ -71,4 +71,16 @@ class ListingsController < ApplicationController
 
     redirect_to("/listings", { :notice => "Listing deleted successfully."} )
   end
+  def bid
+    the_id = params.fetch("path_id")
+
+    matching_listings = Listing.where({ :id => the_id })
+
+    the_listing = matching_listings.at(0)
+    
+     = params.fetch("query_bid")
+    
+    
+    redirect_to("/listings/#{the_listing.id}", { :notice => "Bid submitted successfully!"} )
+  end
 end

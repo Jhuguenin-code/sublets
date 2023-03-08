@@ -70,7 +70,7 @@ Rails.application.routes.draw do
   # ------------------------------
 
   # BID FORM
-  get("/user_bid", { :controller => "listings", :action => "bid" })
+  post("/listing_bid/:path_id", { :controller => "listings", :action => "bid" })
   
   #------------------------------
 
