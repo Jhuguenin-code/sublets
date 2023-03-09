@@ -1,5 +1,24 @@
 Rails.application.routes.draw do
 
+  # Routes for the Bid resource:
+
+  # CREATE
+  post("/add_bid/:path_id", { :controller => "bids", :action => "create" })
+          
+  # READ
+  get("/bids", { :controller => "bids", :action => "index" })
+  
+  get("/bids/:path_id", { :controller => "bids", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_bid/:path_id", { :controller => "bids", :action => "update" })
+  
+  # DELETE
+  get("/delete_bid/:path_id", { :controller => "bids", :action => "destroy" })
+
+  #------------------------------
+
   get("/", {:controller=> "application", :action=>"homepage"})
   
   # Routes for the Interest resource:

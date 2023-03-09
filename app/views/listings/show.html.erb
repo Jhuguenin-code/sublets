@@ -1,3 +1,11 @@
+<style>
+.listing_image {
+  width: 350px;
+  height: 350px;
+}
+
+
+</style>
 <div>
   <div>
   <hr>
@@ -86,7 +94,7 @@
         Image
       </dt>
       <dd>
-        <%= @the_listing.image %>
+        <img src="<%= @the_listing.image %>" class="listing_image">
       </dd>
 
       <dt>
@@ -213,14 +221,20 @@
     <h2>
       Bid on this listing
     </h2>
+      <p>Your bid amounts to what you would be willing to pay monthly, utilities not included, for the room for the given time frame. 
+      </p>
     
-      <form action="/listing_bid/<%= @the_listing.id %>"  method="post" >
+      <form action="/add_bid/<%= @the_listing.id %>"  method="post" >
         <div>
           <label for="bid_box">
             Your bid
           </label>
 
-          <input type="text" id="bid_box" name="query_bid">
+          <input type="text" id="bid_box" name="query_amount">
+
+          <input type="hidden" id="bid_box" name="query_user_id" value= "<%= @current_user.id %>">
+
+           <input type="hidden" id="bid_box" name="query_listing_id" value= "<%= @the_listing.id %>">
         </div>
 
         <button>
@@ -229,9 +243,12 @@
       </form>
   
   <h3>
-      Current bid:
-      <%= @the_bid %>
-      
+      Current bid: <%= number_to_currency(@the_listing.bids.order({ :amount => :desc }).first.amount) %>
+      <% if @the_listing.bids.order({ :amount => :desc }).first.user_id == @current_user.id %>
+      <p> Your bid of <%= number_to_currency(@the_listing.bids.order({ :amount => :desc }).first.amount) %> is the high bid! </p>
+      <% else %>
+      <p> Make a higher bid to win this sublet! </p>
+      <% end %>
 
   </h3>
   

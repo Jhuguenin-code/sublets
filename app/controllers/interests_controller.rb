@@ -22,7 +22,6 @@ class InterestsController < ApplicationController
     the_interest.listing_id = params.fetch("query_listing_id")
     the_interest.user_id = session.fetch(:user_id)
 
-    #the_interest.user_id = params.fetch("query_user_id")
 
     if the_interest.valid?
       the_interest.save

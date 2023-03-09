@@ -1,0 +1,118 @@
+<div>
+  <div>
+    <h1>
+      List of all bids
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new bid
+    </h2>
+
+    <form action="/insert_bid" method="post">
+      <div>
+        <label for="listing_id_box">
+          Listing
+        </label>
+
+        <input type="text" id="listing_id_box" name="query_listing_id">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="amount_box">
+          Amount
+        </label>
+
+        <input type="text" id="amount_box" name="query_amount">
+      </div>
+
+      <button>
+        Create bid
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Listing
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Amount
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_bids.each do |a_bid| %>
+      <tr>
+        <td>
+          <%= a_bid.id %>
+        </td>
+
+        <td>
+          <%= a_bid.listing_id %>
+        </td>
+
+        <td>
+          <%= a_bid.user_id %>
+        </td>
+
+        <td>
+          <%= a_bid.amount %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_bid.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_bid.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/bids/<%= a_bid.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

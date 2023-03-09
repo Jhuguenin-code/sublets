@@ -78,7 +78,7 @@ class ListingsController < ApplicationController
 
     the_listing = matching_listings.at(0)
     
-     = params.fetch("query_bid")
+    @the_bid = params.fetch("query_bid")
     
     
     redirect_to("/listings/#{the_listing.id}", { :notice => "Bid submitted successfully!"} )

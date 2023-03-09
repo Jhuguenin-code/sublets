@@ -38,5 +38,11 @@ class Listing < ApplicationRecord
     :dependent => :destroy
   })
 
+  has_many(:bids, {
+    :class_name => "Bid",
+    :foreign_key => "listing_id",
+    :dependent => :destroy
+  })
+
   
 end

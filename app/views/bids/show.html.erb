@@ -1,0 +1,101 @@
+<div>
+  <div>
+    <h1>
+      Bid #<%= @the_bid.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/bids">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_bid/<%= @the_bid.id %>">
+          Delete bid
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Listing
+      </dt>
+      <dd>
+        <%= @the_bid.listing_id %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_bid.user_id %>
+      </dd>
+
+      <dt>
+        Amount
+      </dt>
+      <dd>
+        <%= @the_bid.amount %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_bid.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_bid.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit bid
+    </h2>
+
+    <form action="/modify_bid/<%= @the_bid.id %>"  method="post" >
+      <div>
+        <label for="listing_id_box">
+          Listing
+        </label>
+
+        <input type="text" id="listing_id_box" name="query_listing_id" value="<%= @the_bid.listing_id %>">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_bid.user_id %>">
+      </div>
+
+      <div>
+        <label for="amount_box">
+          Amount
+        </label>
+
+        <input type="text" id="amount_box" name="query_amount" value="<%= @the_bid.amount %>">
+      </div>
+
+      <button>
+        Update bid
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
