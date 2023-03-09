@@ -10,9 +10,9 @@
   <div>
   <hr>
     <h1>
-      <%= @the_listing.street_address %> details
+      <%= @the_listing.street_address %> 
       <div>
-        Unit #<%= @the_listing.unit_number %>
+        Unit #<%= @the_listing.unit_number %> details
       </div>
     </h1>
 
@@ -224,7 +224,7 @@
       <p>Your bid amounts to what you would be willing to pay monthly, utilities not included, for the room for the given time frame. 
       </p>
     
-      <form action="/add_bid/<%= @the_listing.id %>"  method="post" >
+      <form action="/add_bid/<%= @the_listing.id %>"  method="post">
         <div>
           <label for="bid_box">
             Your bid
@@ -243,16 +243,17 @@
       </form>
   
   <h3>
-      Current bid: <%= number_to_currency(@the_listing.bids.order({ :amount => :desc }).first.amount) %>
-      <% if @the_listing.bids.order({ :amount => :desc }).first.user_id == @current_user.id %>
-      <p> Your bid of <%= number_to_currency(@the_listing.bids.order({ :amount => :desc }).first.amount) %> is the high bid! </p>
+      Current bid: 
+      <% if @the_listing.bids == nil %>
+        <p> No current bids </p>
       <% else %>
-      <p> Make a higher bid to win this sublet! </p>
+        <%= number_to_currency(@the_listing.bids.order({ :amount => :desc }).first.amount) %>
+        <% if @the_listing.bids.order({ :amount => :desc }).first.user_id == @current_user.id %>
+        <p> Your bid of <%= number_to_currency(@the_listing.bids.order({ :amount => :desc }).first.amount) %> is the high bid! </p>
+        <% else %>
+        <p> Make a higher bid to win this sublet! </p>
+        <% end %>
       <% end %>
-
   </h3>
-  
-  <% end %>
+  <% end %> 
 </div>
-
-<hr>

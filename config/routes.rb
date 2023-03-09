@@ -88,9 +88,4 @@ Rails.application.routes.draw do
 
   # ------------------------------
 
-  # BID FORM
-  post("/listing_bid/:path_id", { :controller => "listings", :action => "bid" })
-  
-  #------------------------------
-
 end

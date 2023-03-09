@@ -60,6 +60,10 @@
         </th>
 
         <th>
+        Un-favorite this listing
+        </th>
+
+        <th>
         </th>
       </tr>
 
@@ -79,7 +83,11 @@
         <td>
           <%= time_ago_in_words(an_interest.updated_at) %> ago
         </td>
-
+        <td>
+          <a href="/delete_interest/<%= an_interest.id %>">
+          Remove
+          </a>
+        </td>
         <td>
           <a href="/listings/<%= an_interest.listing.id %>">
             Show details

@@ -14,6 +14,8 @@ class ListingsController < ApplicationController
 
     @the_listing = matching_listings.at(0)
 
+    
+
     render({ :template => "listings/show.html.erb" })
   end
 
