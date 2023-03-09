@@ -244,14 +244,15 @@
   
   <h3>
       Current bid: 
-      <% if @the_listing.bids == nil %>
-        <p> No current bids </p>
+      <% if @the_listing.bids.length == 0 %>
+         No current bids
       <% else %>
-        <%= number_to_currency(@the_listing.bids.order({ :amount => :desc }).first.amount) %>
+        <% high_bid = number_to_currency(@the_listing.bids.order({ :amount => :desc }).first.amount) %>
+        <%= high_bid %> 
         <% if @the_listing.bids.order({ :amount => :desc }).first.user_id == @current_user.id %>
-        <p> Your bid of <%= number_to_currency(@the_listing.bids.order({ :amount => :desc }).first.amount) %> is the high bid! </p>
+          <p> Your bid of <%= high_bid %> is the high bid! </p>
         <% else %>
-        <p> Make a higher bid to win this sublet! </p>
+          <p> Make a higher bid to win this sublet! </p>
         <% end %>
       <% end %>
   </h3>

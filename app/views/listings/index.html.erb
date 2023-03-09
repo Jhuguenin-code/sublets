@@ -4,7 +4,6 @@
   height: 350px;
 }
 
-
 </style>
 <div>
   <div>
@@ -15,104 +14,6 @@
 </div>
 
 <hr>
-
-<div>
-  <div>
-    <h2>
-      Add a new listing
-    </h2>
-
-    <form action="/insert_listing" method="post">
-      <div>
-        <label for="street_address_box">
-          Street address
-        </label>
-
-        <input type="text" id="street_address_box" name="query_street_address">
-      </div>
-
-      <div>
-        <label for="unit_number_box">
-          Unit number
-        </label>
-
-        <input type="text" id="unit_number_box" name="query_unit_number">
-      </div>
-
-      <div>
-        <label for="city_box">
-          City
-        </label>
-
-        <input type="text" id="city_box" name="query_city">
-      </div>
-
-      <div>
-        <label for="zip_code_box">
-          Zip code
-        </label>
-
-        <input type="text" id="zip_code_box" name="query_zip_code">
-      </div>
-
-      <div>
-        <label for="info_box">
-          Info
-        </label>
-
-        <textarea id="info_box" name="query_info" rows="3"></textarea>
-      </div>
-
-      <div>
-        <label for="bathrooms_box">
-          Bathrooms
-        </label>
-
-        <input type="text" id="bathrooms_box" name="query_bathrooms">
-      </div>
-
-      <div>
-        <label for="bedrooms_box">
-          Bedrooms
-        </label>
-
-        <input type="text" id="bedrooms_box" name="query_bedrooms">
-      </div>
-
-      <div>
-        <label for="current_rent_box">
-          Current rent
-        </label>
-
-        <input type="text" id="current_rent_box" name="query_current_rent">
-      </div>
-
-      <div>
-        <label for="sublet_rent_box">
-          Desired Sublet rent
-        </label>
-
-        <input type="text" id="sublet_rent_box" name="query_sublet_rent">
-      </div>
-
-      <div>
-        <input type="hidden" id="poster_box" name="query_poster" value="<%= @current_user.id %>">
-      </div>
-
-      <div>
-        <label for="image_box">
-          Image
-        </label>
-
-        <input type="text" id="image_box" name="query_image">
-      </div>
-
-      <button>
-        Create listing
-      </button>
-    </form>
-  </div>
-</div>
 
 <hr>
 <div>
@@ -230,6 +131,104 @@
       </tr>
       <% end %>
     </table>
+  </div>
+</div>
+
+<div>
+  <div>
+    <h2>
+      Add a new listing
+    </h2>
+
+    <form action="/insert_listing" method="post">
+      <div>
+        <label for="street_address_box">
+          Street address
+        </label>
+
+        <input type="text" id="street_address_box" name="query_street_address">
+      </div>
+
+      <div>
+        <label for="unit_number_box">
+          Unit number
+        </label>
+
+        <input type="text" id="unit_number_box" name="query_unit_number">
+      </div>
+
+      <div>
+        <label for="city_box">
+          City
+        </label>
+
+        <input type="text" id="city_box" name="query_city">
+      </div>
+
+      <div>
+        <label for="zip_code_box">
+          Zip code
+        </label>
+
+        <input type="text" id="zip_code_box" name="query_zip_code">
+      </div>
+
+      <div>
+        <label for="info_box">
+          Info
+        </label>
+
+        <textarea id="info_box" name="query_info" rows="3"></textarea>
+      </div>
+
+      <div>
+        <label for="bathrooms_box">
+          Bathrooms
+        </label>
+
+        <input type="text" id="bathrooms_box" name="query_bathrooms">
+      </div>
+
+      <div>
+        <label for="bedrooms_box">
+          Bedrooms
+        </label>
+
+        <input type="text" id="bedrooms_box" name="query_bedrooms">
+      </div>
+
+      <div>
+        <label for="current_rent_box">
+          Current rent
+        </label>
+
+        <input type="text" id="current_rent_box" name="query_current_rent">
+      </div>
+
+      <div>
+        <label for="sublet_rent_box">
+          Desired Sublet rent
+        </label>
+
+        <input type="text" id="sublet_rent_box" name="query_sublet_rent">
+      </div>
+
+      <div>
+        <input type="hidden" id="poster_box" name="query_poster" value="<%= @current_user.id %>">
+      </div>
+
+      <div>
+        <label for="image_box">
+          Image
+        </label>
+
+        <input type="text" id="image_box" name="query_image">
+      </div>
+
+      <button>
+        Create listing
+      </button>
+    </form>
   </div>
 </div>
 
