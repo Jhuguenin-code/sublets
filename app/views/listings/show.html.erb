@@ -123,7 +123,7 @@
     <% if @the_listing.bids.length == 0 %>
       Your listing has no current bids 
     <% else %>
-    <strong> The high bid on this listing is: <%=@the_listing.bids.order({ :amount => :desc}).first.amount %>!
+    <strong> The high bid on this listing is: <%= number_to_currency(@the_listing.bids.order({ :amount => :desc}).first.amount) %>!
       </strong>
     <% end %>
   </p>
