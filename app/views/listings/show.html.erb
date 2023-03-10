@@ -113,15 +113,26 @@
     </dl>
   </div>
 </div>
-<p><strong>The estimated sublet rent for this unit should be: <%=@the_listing.current_rent-200%>!</strong>
-</p>
+
+<hr>
+<% if @current_user.id == @the_listing.poster %>
+  <h3> 
+  Current bids on your listing
+  </h3>
+
+    <% if @the_listing.bids.length == 0 %>
+      Your listing has no current bids 
+    <% else %>
+    <strong> The high bid on this listing is: <%=@the_listing.bids.order({ :amount => :desc}).first.amount %>!
+      </strong>
+    <% end %>
+  </p>
 
 <hr>
 
 
 <div>
   <div>
-  <% if @current_user.id == @the_listing.poster %>
     <h2>
       Edit listing
     </h2>

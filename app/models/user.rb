@@ -27,6 +27,12 @@ class User < ApplicationRecord
     :foreign_key => "user_id",
     :dependent => :destroy
   })
+
+  has_many(:bids, {
+    :class_name => "Bid",
+    :foreign_key => "user_id",
+    :dependent => :destroy
+  })
   
 
   def full_name

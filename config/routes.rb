@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   # READ
   get("/bids", { :controller => "bids", :action => "index" })
   
-  get("/bids/:path_id", { :controller => "bids", :action => "show" })
+  #get("/bids/:path_id", { :controller => "bids", :action => "show" })
   
   # UPDATE
   
-  post("/modify_bid/:path_id", { :controller => "bids", :action => "update" })
+  # post("/modify_bid/:path_id", { :controller => "bids", :action => "update" })
   
   # DELETE
   get("/delete_bid/:path_id", { :controller => "bids", :action => "destroy" })

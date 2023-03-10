@@ -1,71 +1,32 @@
 <div>
   <div>
     <h1>
-      List of all bids
+      Your active bids
     </h1>
   </div>
 </div>
 
-<hr>
-
-<div>
-  <div>
-    <h2>
-      Add a new bid
-    </h2>
-
-    <form action="/insert_bid" method="post">
-      <div>
-        <label for="listing_id_box">
-          Listing
-        </label>
-
-        <input type="text" id="listing_id_box" name="query_listing_id">
-      </div>
-
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id">
-      </div>
-
-      <div>
-        <label for="amount_box">
-          Amount
-        </label>
-
-        <input type="text" id="amount_box" name="query_amount">
-      </div>
-
-      <button>
-        Create bid
-      </button>
-    </form>
-  </div>
-</div>
 
 <hr>
+<% if @current_user.bids.length == 0 %>
+<strong> You have no current bids! Check out the <a href="/listings/">listings</a> page to find an apartment you like!</strong>
+<% else %>
 <div>
   <div>
     <table border="1">
       <tr>
         <th>
-          ID
+          Address
         </th>
 
         <th>
-          Listing
+          Listing Poster
         </th>
 
         <th>
-          User
+          Bid Amount
         </th>
 
-        <th>
-          Amount
-        </th>
 
         <th>
           Created at
@@ -76,25 +37,22 @@
         </th>
 
         <th>
+        Retract bid
         </th>
       </tr>
 
       <% @list_of_bids.each do |a_bid| %>
       <tr>
         <td>
-          <%= a_bid.id %>
+          <%= a_bid.listing.street_address %>
         </td>
 
         <td>
-          <%= a_bid.listing_id %>
+          <%= a_bid.listing.a_poster.full_name %>
         </td>
 
         <td>
-          <%= a_bid.user_id %>
-        </td>
-
-        <td>
-          <%= a_bid.amount %>
+          <%= number_to_currency(a_bid.amount) %>
         </td>
 
         <td>
@@ -105,8 +63,8 @@
         </td>
 
         <td>
-          <a href="/bids/<%= a_bid.id %>">
-            Show details
+          <a href="/delete_bid/<%= a_bid.id %>">
+            Retract this bid
           </a>
         </td>
       </tr>
@@ -114,5 +72,5 @@
     </table>
   </div>
 </div>
-
+<% end %>
 <hr>

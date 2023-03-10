@@ -1,6 +1,6 @@
 class BidsController < ApplicationController
   def index
-    matching_bids = Bid.all
+    matching_bids = @current_user.bids
 
     @list_of_bids = matching_bids.order({ :created_at => :desc })
 
